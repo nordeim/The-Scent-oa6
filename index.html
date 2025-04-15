@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Scent - Premium Aromatherapy Products</title>
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;500;600&family=Montserrat:wght@300;400;500&display=swap" rel="stylesheet">
+    
+    <!-- GSAP for advanced animations -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/gsap.min.js" defer></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/ScrollTrigger.min.js" defer></script>
+    
+    <link rel="stylesheet" href="styles.css">
+    <script src="scripts.js" defer></script>
+</head>
+<body class="light-mode">
+    <!-- Header Navigation -->
+    <header class="site-header">
+        <div class="container">
+            <div class="logo">
+                <h1>The Scent</h1>
+            </div>
+            
+            <nav class="main-nav">
+                <ul>
+                    <li><a href="#about">Our Story</a></li>
+                    <li><a href="#products">Products</a></li>
+                    <li><a href="#quiz">Find Your Scent</a></li>
+                    <li><a href="#testimonials">Testimonials</a></li>
+                </ul>
+            </nav>
+            
+            <div class="header-controls">
+                <button class="theme-toggle" aria-label="Toggle dark/light mode">
+                    <i class="fa-solid fa-sun light-icon"></i>
+                    <i class="fa-solid fa-moon dark-icon"></i>
+                </button>
+                <a href="#shop" class="btn btn-primary">Shop Now</a>
+            </div>
+            
+            <button class="mobile-menu-toggle" aria-label="Toggle mobile menu">
+                <i class="fa-solid fa-bars"></i>
+            </button>
+        </div>
+    </header>
+
+    <!-- Hero Section with Video Background and SVG Scent Trails -->
+    <section class="hero">
+        <div class="hero-media">
+            <video autoplay muted loop playsinline class="hero-video">
+                <source src="videos/aromatherapy-bg.mp4" type="video/mp4">
+            </video>
+            <img src="images/hero-fallback.jpg" alt="Aromatherapy oils" class="hero-fallback">
+        </div>
+        
+        <div class="hero-overlay"></div>
+        
+        <!-- SVG Scent Trails Animation -->
+        <svg class="scent-trails" viewBox="0 0 1440 800" preserveAspectRatio="xMidYMid slice">
+            <!-- SVG paths generated via JavaScript -->
+        </svg>
+        
+        <div class="container hero-content">
+            <h1 class="hero-title">Discover Your Perfect <span class="accent">Scent</span></h1>
+            <p class="hero-subtitle">Premium aromatherapy products for mind, body, and soul</p>
+            <div class="hero-cta">
+                <a href="#products" class="btn btn-primary btn-lg">Explore Products</a>
+                <a href="#quiz" class="btn btn-secondary btn-lg">Find Your Scent</a>
+            </div>
+            
+            <!-- Optional Audio Control -->
+            <button class="audio-toggle" aria-label="Toggle ambient sound">
+                <i class="fa-solid fa-volume-xmark muted"></i>
+                <i class="fa-solid fa-volume-high unmuted"></i>
+                <audio id="ambient-audio" loop>
+                    <source src="audio/ambient-nature.mp3" type="audio/mp3">
+                </audio>
+            </button>
+        </div>
+        
+        <div class="scroll-indicator">
+            <i class="fa-solid fa-chevron-down"></i>
+            <span>Scroll to discover</span>
+        </div>
+    </section>
+
+    <!-- About Section with Parallax -->
+    <section id="about" class="about">
+        <div class="section-divider">
+            <svg viewBox="0 0 1440 100" preserveAspectRatio="none">
+                <path d="M0,0 C480,100 960,100 1440,0 L1440,100 L0,100 Z"></path>
+            </svg>
+        </div>
+        
+        <div class="container">
+            <div class="section-header">
+                <h2>Our Story</h2>
+                <p class="section-subtitle">From nature to wellness, crafted with care</p>
+            </div>
+            
+            <div class="about-content">
+                <div class="about-text">
+                    <p class="lead">At The Scent, we believe in the power of natural aromas to transform our daily lives.</p>
+                    <p>Our company produces a range of aroma therapeutic products where high quality raw materials from all over the world are imported and our finished products are exported back to these countries. This is possible due to our unique and creative product formulations and our knowledge for the various applications, creating harmonious, balanced aromatherapy products.</p>
+                    <p>Stress is an ever-increasing part of our lives, making aromatherapy more relevant today than ever before.</p>
+                </div>
+                
+                <div class="about-image parallax-container">
+                    <img src="https://raw.githubusercontent.com/nordeim/The-Scent/refs/heads/main/images/scent2.jpg" alt="Premium essential oils" class="parallax-image">
+                </div>
+            </div>
+            
+            <div class="ingredient-map">
+                <h3>Global Ingredients, Local Craft</h3>
+                <div class="map-container">
+                    <img src="images/world-map.svg" alt="World map showing ingredient origins" class="world-map">
+                    <div class="map-markers">
+                        <!-- Map markers with tooltips -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Product Showcase Section -->
+    <section id="products" class="products">
+        <div class="container">
+            <div class="section-header">
+                <h2>Our Premium Collection</h2>
+                <p class="section-subtitle">Handcrafted with care for your well-being</p>
+            </div>
+            
+            <div class="product-categories">
+                <button class="category-btn active" data-category="all">All Products</button>
+                <button class="category-btn" data-category="oils">Essential Oils</button>
+                <button class="category-btn" data-category="soaps">Natural Soaps</button>
+            </div>
+            
+            <div class="products-grid">
+                <!-- Essential Oils -->
+                <div class="product-card" data-category="oils">
+                    <div class="product-image">
+                        <img src="https://raw.githubusercontent.com/nordeim/The-Scent/refs/heads/main/images/scent4.jpg" alt="Lavender essential oil">
+                    </div>
+                    <div class="product-info">
+                        <h3>Lavender Essence</h3>
+                        <p>Calming essential oil for relaxation and sleep</p>
+                        <div class="product-meta">
+                            <span class="product-price">$24.99</span>
+                            <a href="#" class="btn btn-outline">Add to Cart</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- More product cards here -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Interactive Scent Quiz Section -->
+    <section id="quiz" class="quiz-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>Find Your Signature Scent</h2>
+                <p class="section-subtitle">Take our quick quiz for personalized recommendations</p>
+            </div>
+            
+            <div class="quiz-container">
+                <div class="quiz-progress">
+                    <!-- Step indicators -->
+                </div>
+                
+                <div class="quiz-content">
+                    <!-- Step 1: Mood -->
+                    <div class="quiz-step active" data-step="1">
+                        <h3>How would you like to feel?</h3>
+                        <div class="quiz-options">
+                            <div class="quiz-option" data-value="calm">
+                                <i class="fa-solid fa-spa"></i>
+                                <span>Calm & Relaxed</span>
+                            </div>
+                            <!-- More options -->
+                        </div>
+                        <div class="quiz-nav">
+                            <button class="btn btn-secondary next-step">Continue</button>
+                        </div>
+                    </div>
+                    
+                    <!-- Additional steps and results section -->
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section id="testimonials" class="testimonials">
+        <div class="container">
+            <div class="section-header">
+                <h2>What Our Customers Say</h2>
+                <p class="section-subtitle">Stories from our aromatherapy community</p>
+            </div>
+            
+            <div class="testimonials-grid">
+                <!-- Testimonial cards -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer and Floating CTA -->
+</body>
+</html>
